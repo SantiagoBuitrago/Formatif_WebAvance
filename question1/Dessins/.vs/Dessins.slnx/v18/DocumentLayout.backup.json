@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\events\\changecolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\events\\changecolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\events\\drawingevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\events\\drawingevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\events\\drawstar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\events\\drawstar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\controllers\\dessinscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\controllers\\dessinscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\events\\wait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\events\\wait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\dessins.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\dessins.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|c:\\users\\2166461\\desktop\\intra_formatif_a26\\question1\\dessins\\dessins\\events\\drawcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6BEC9D7-B492-A1BB-B61B-65339FA1C159}|Dessins\\Dessins.csproj|solutionrelative:dessins\\events\\drawcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DrawCircle.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawCircle.cs",
+              "RelativeDocumentMoniker": "Dessins\\Events\\DrawCircle.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawCircle.cs",
+              "RelativeToolTip": "Dessins\\Events\\DrawCircle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T14:32:55.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChangeColor.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\ChangeColor.cs",
+              "RelativeDocumentMoniker": "Dessins\\Events\\ChangeColor.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\ChangeColor.cs",
+              "RelativeToolTip": "Dessins\\Events\\ChangeColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T14:32:52.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DrawingEvent.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawingEvent.cs",
+              "RelativeDocumentMoniker": "Dessins\\Events\\DrawingEvent.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawingEvent.cs",
+              "RelativeToolTip": "Dessins\\Events\\DrawingEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T13:19:32.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Wait.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\Wait.cs",
+              "RelativeDocumentMoniker": "Dessins\\Events\\Wait.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\Wait.cs",
+              "RelativeToolTip": "Dessins\\Events\\Wait.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T13:19:25.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dessins.http",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Dessins.http",
+              "RelativeDocumentMoniker": "Dessins\\Dessins.http",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Dessins.http",
+              "RelativeToolTip": "Dessins\\Dessins.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-10-19T12:42:01.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Program.cs",
+              "RelativeDocumentMoniker": "Dessins\\Program.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Program.cs",
+              "RelativeToolTip": "Dessins\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T12:42:00.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DrawStar.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawStar.cs",
+              "RelativeDocumentMoniker": "Dessins\\Events\\DrawStar.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Events\\DrawStar.cs",
+              "RelativeToolTip": "Dessins\\Events\\DrawStar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T12:36:47.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DessinsController.cs",
+              "DocumentMoniker": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Controllers\\DessinsController.cs",
+              "RelativeDocumentMoniker": "Dessins\\Controllers\\DessinsController.cs",
+              "ToolTip": "C:\\Users\\2166461\\Desktop\\Intra_Formatif_A26\\question1\\Dessins\\Dessins\\Controllers\\DessinsController.cs*",
+              "RelativeToolTip": "Dessins\\Controllers\\DessinsController.cs*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T12:36:00.404Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

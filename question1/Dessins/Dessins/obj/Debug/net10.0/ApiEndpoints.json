@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "Dessins.Controllers.DessinsController",
+    "Method": "GetDrawing1",
+    "RelativePath": "api/Dessins/GetDrawing1",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Dessins.Controllers.DessinsController",
+    "Method": "GetDrawing2",
+    "RelativePath": "api/Dessins/GetDrawing2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

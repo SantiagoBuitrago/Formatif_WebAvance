@@ -1,0 +1,119 @@
+"use client";
+
+import axios from "axios";
+import { useState, useRef  } from 'react';
+import Canvas from './components/canvas';
+import { Button } from './components/ui/button';
+import { createSquare, createCircle, createStar } from '@/lib/utils';
+import { Console } from "console";
+
+export default function Home() {
+  const [shapes, setShapes] = useState<any[]>([]);
+  const currentColor = useRef("blue");
+
+  // Seulement un exemple local pour comprendre comment dessiner des formes avec un délai
+  async function afficherTestLocal(){
+    clearShapes();
+
+    await wait(1);
+    
+    drawSquare(1,1);
+    
+    await wait(2);
+
+    currentColor.current = "red";
+    drawCircle(3,1);
+  }
+
+  async function afficherEvents1(){
+    clearShapes();
+    // TODO: Il faut appeler le serveur pour obtenir l'event retourné
+    // On a ajouté un niveau de complexité dans notre "Appel de fonction", mais on peut maintenant obtenir des données à distance!
+      const response = await axios.get("http://localhost:5269/api/Dessins/GetDrawing1");
+      console.log(response.data);
+      applyEvents(response.data);
+  }
+
+  async function afficherEvents2(){
+    clearShapes();
+    // TODO: Il faut appeler le serveur pour obtenir la séquence d'événements 2 (que vous devez créer sur le serveur)
+      const response = await axios.get("http://localhost:5269/api/Dessins/GetDrawing2");
+      console.log(response.data);
+      applyEvents(response.data);
+  }
+
+  async function applyEvents(event:any){
+    // TODO: Il faut traiter les événements reçus du serveur et dessiner les formes correspondantes
+
+  if ( Array.isArray(event))
+  {
+       for (const element of event) {
+    element.type === "Square"
+      ? drawSquare(element.x, element.y)
+      : element.type === "Circle"
+      ? drawCircle(element.x, element.y)
+      : element.type === "Star"
+      ? drawStar(element.x, element.y, element.innerRadius)
+      : element.type === "Color"
+      ? currentColor.current = element.color
+      :await wait(element.secondes);
+  }
+  }
+  else{
+      switch(event.type){ case "Square":
+        drawSquare(event.x, event.y);
+        break;
+
+      case "Circle":
+        drawCircle(event.x, event.y);
+        break;
+
+      case "Star":
+        drawStar(event.x, event.y, event.innerRadius);
+        break;
+
+      default:
+        // Si no es ninguna de las formas anteriores, asume que es una espera
+        await wait(event.secondes);
+        break;};
+  }
+ 
+ 
+  
+  }
+
+  // ATTENTION: Les méthodes suivantes n'ont pas besoin d'être modifiées pour répondre à la question
+
+  return (
+    <div className='m-4'>
+      <Button variant="outline" className="mr-2" onClick={() => afficherTestLocal()}>Afficher Test Local</Button>
+      <Button variant="outline" className="mr-2" onClick={() => afficherEvents1()}>Afficher Événements 1</Button>
+      <Button variant="outline" onClick={() => afficherEvents2()}>Afficher Événements 2</Button>
+      <Canvas shapes={shapes} />
+    </div>
+  );
+
+  function drawSquare(x :number, y:number){
+    let color = currentColor.current;
+    setShapes((shapes) => [...shapes, createSquare(x, y, color)]);
+  }
+
+  function drawCircle(x :number, y:number){
+    let color = currentColor.current;
+    setShapes((shapes) => [...shapes, createCircle(x, y, color)]);
+  }
+
+  function drawStar(x :number, y:number, innerRadius:number){
+    let color = currentColor.current;
+    setShapes((shapes) => [...shapes, createStar(x, y, innerRadius,color)]);
+  }
+
+  function clearShapes(){
+    setShapes([]);
+    currentColor.current = "blue";
+  }
+
+  async function wait(s: number){
+    return new Promise(resolve => setTimeout(resolve, s * 1000));
+  }
+}
