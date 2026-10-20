@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using SignalR.Events;
 using SignalR.Services;
 
 namespace SignalR.Hubs
@@ -11,22 +13,53 @@ namespace SignalR.Hubs
             _pizzaManager = pizzaManager;
         }
 
+
         public override async Task OnConnectedAsync()
         {
             await base.OnConnectedAsync();
+            _pizzaManager.AddUser();
+
+            var update = new UpdateNbUsers(
+                _pizzaManager.NbConnectedUsers
+            );
+
+            await Clients.All.SendAsync("UpdateNbUsers", update);
         }
 
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            await base.OnConnectedAsync();
+            _pizzaManager.RemoveUser();
+
+            await Clients.All.SendAsync(
+                "UpdateNbUsers",
+                new UpdateNbUsers(_pizzaManager.NbConnectedUsers)
+            );
+
+            await base.OnDisconnectedAsync(exception);
         }
 
-        public async Task SelectChoice(PizzaChoice choice)
+        public async Task<List<UpdateEvents>> SelectChoice(PizzaChoice choice)
         {
+            _pizzaManager.GetGroupName(choice);
+            List<UpdateEvents> events = new List<UpdateEvents> {
+                    new UpdatePizzaPrice(_pizzaManager.GetPizzaPrice(choice)),
+                    new UpdateNbPizzasAndMoney(_pizzaManager.GetMoney(choice), _pizzaManager.GetNbPizzas(choice))
+             };
+
+
+            return events;
         }
 
-        public async Task UnselectChoice(PizzaChoice choice)
+        public async Task<List<UpdateEvents>> UnselectChoice(PizzaChoice choice)
         {
+            _pizzaManager.GetGroupName(choice);
+            List<UpdateEvents> events = new List<UpdateEvents> {
+                    new UpdatePizzaPrice(_pizzaManager.GetPizzaPrice(choice)),
+                    new UpdateNbPizzasAndMoney(_pizzaManager.GetMoney(choice), _pizzaManager.GetNbPizzas(choice))
+             };
+
+
+            return events;
         }
 
         public async Task AddMoney(PizzaChoice choice)

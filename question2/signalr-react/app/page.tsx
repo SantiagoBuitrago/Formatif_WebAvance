@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect } from "react";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
 
 export default function Home() {
 
@@ -18,27 +19,60 @@ export default function Home() {
   const [nbPizzas, setNbPizzas] = React.useState<number>(0);
 
   useEffect(() => {
-      connectToHub();
+    const connection = connectToHub();
+  return () => {
+    void connection.stop();
+  };
     }, []);
 
   function connectToHub() {
     let newHubConnection = new HubConnectionBuilder()
     .withUrl('http://localhost:5282/hubs/pizza')
     .build();
+   newHubConnection.on("UpdateNbUsers", (data) => {
+          console.log(data);
+          setUserCount(data.nbUsers);
+});
 
     // TODO: Mettre isConnected à true seulement une fois que la connection au Hub est faite
-    setIsConnected(true);
+    newHubConnection
+  .start()
+  .then(() => {setHubConnection(newHubConnection);
+    console.log("Connexion réussie !");
+  
+     setIsConnected(true);
+  })
+
+ 
+
+  return newHubConnection;
   }
 
-  function selectChoice(selectedChoice:number) {
-    setSelectedChoice(selectedChoice);
-  }
+async function selectChoice(selectedChoice: number) {
+  if (!hubConnection) return;
 
-  function unselectChoice() {
-    setSelectedChoice(-1);
-  }
+  const response = await hubConnection.invoke(
+    "SelectChoice",
+    selectedChoice
+  );
 
+  setSelectedChoice(selectedChoice);
+  console.log(response);
+}
+
+async function unselectChoice() {
+  if (!hubConnection) return;
+
+  const response = await hubConnection.invoke(
+    "UnselectChoice",
+   -1
+  );
+
+  setSelectedChoice(-1);
+  console.log(response);
+}
   function addMoney() {
+
   }
 
   function buyPizza() {
