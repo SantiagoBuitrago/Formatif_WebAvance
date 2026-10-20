@@ -18,6 +18,7 @@ export default function Home() {
   const [money, setMoney] = React.useState<number>(0);
   const [nbPizzas, setNbPizzas] = React.useState<number>(0);
 
+
   useEffect(() => {
     const connection = connectToHub();
   return () => {
@@ -55,7 +56,9 @@ async function selectChoice(selectedChoice: number) {
     "SelectChoice",
     selectedChoice
   );
-
+setPizzaPrice(response[0].price)
+setNbPizzas(response[1].nbPizzas)
+setMoney(response[1].money)
   setSelectedChoice(selectedChoice);
   console.log(response);
 }
@@ -65,18 +68,36 @@ async function unselectChoice() {
 
   const response = await hubConnection.invoke(
     "UnselectChoice",
-   -1
+   selectedChoice
   );
 
   setSelectedChoice(-1);
   console.log(response);
 }
-  function addMoney() {
 
-  }
+async function addMoney() {
+  if (!hubConnection) return;
 
-  function buyPizza() {
-  }
+  const response = await hubConnection.invoke(
+    "AddMoney",
+    selectedChoice
+  );
+
+  setMoney(response.money);
+  setNbPizzas(response.nbPizzas);
+}
+
+async function buyPizza() {
+  if (!hubConnection) return;
+
+  const response = await hubConnection.invoke(
+    "BuyPizza",
+    selectedChoice
+  );
+
+  setMoney(response.money);
+  setNbPizzas(response.nbPizzas);
+}
 
   return (
     <>

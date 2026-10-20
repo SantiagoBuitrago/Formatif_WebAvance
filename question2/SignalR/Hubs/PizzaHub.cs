@@ -19,6 +19,7 @@ namespace SignalR.Hubs
             await base.OnConnectedAsync();
             _pizzaManager.AddUser();
 
+
             var update = new UpdateNbUsers(
                 _pizzaManager.NbConnectedUsers
             );
@@ -40,34 +41,70 @@ namespace SignalR.Hubs
 
         public async Task<List<UpdateEvents>> SelectChoice(PizzaChoice choice)
         {
-            _pizzaManager.GetGroupName(choice);
+          
             List<UpdateEvents> events = new List<UpdateEvents> {
                     new UpdatePizzaPrice(_pizzaManager.GetPizzaPrice(choice)),
                     new UpdateNbPizzasAndMoney(_pizzaManager.GetMoney(choice), _pizzaManager.GetNbPizzas(choice))
              };
-
+            await Groups.AddToGroupAsync(
+              Context.ConnectionId,
+              _pizzaManager.GetGroupName(choice)
+                );
 
             return events;
         }
 
         public async Task<List<UpdateEvents>> UnselectChoice(PizzaChoice choice)
         {
-            _pizzaManager.GetGroupName(choice);
-            List<UpdateEvents> events = new List<UpdateEvents> {
-                    new UpdatePizzaPrice(_pizzaManager.GetPizzaPrice(choice)),
-                    new UpdateNbPizzasAndMoney(_pizzaManager.GetMoney(choice), _pizzaManager.GetNbPizzas(choice))
-             };
+            await Groups.RemoveFromGroupAsync(
+                Context.ConnectionId,
+                _pizzaManager.GetGroupName(choice)
+            );
 
+            List<UpdateEvents> events = new List<UpdateEvents>
+    {
+        new UpdatePizzaPrice(_pizzaManager.GetPizzaPrice(choice)),
+        new UpdateNbPizzasAndMoney(
+            _pizzaManager.GetMoney(choice),
+            _pizzaManager.GetNbPizzas(choice)
+        )
+    };
 
             return events;
         }
 
-        public async Task AddMoney(PizzaChoice choice)
+        public async Task<UpdateEvents> AddMoney(PizzaChoice choice)
         {
+            _pizzaManager.IncreaseMoney(choice);
+
+            var update = new UpdateNbPizzasAndMoney(
+                _pizzaManager.GetMoney(choice),
+                _pizzaManager.GetNbPizzas(choice)
+            );
+
+            await Clients.Group(
+                _pizzaManager.GetGroupName(choice)
+            ).SendAsync("UpdateNbPizzasAndMoney", update);
+
+            return update;
+
+
         }
 
-        public async Task BuyPizza(PizzaChoice choice)
+        public async Task<UpdateNbPizzasAndMoney> BuyPizza(PizzaChoice choice)
         {
+            _pizzaManager.BuyPizza(choice);
+
+            var update = new UpdateNbPizzasAndMoney(
+                _pizzaManager.GetMoney(choice),
+                _pizzaManager.GetNbPizzas(choice)
+            );
+
+            await Clients.Group(
+                _pizzaManager.GetGroupName(choice)
+            ).SendAsync("UpdateNbPizzasAndMoney", update);
+
+            return update;
         }
     }
 }

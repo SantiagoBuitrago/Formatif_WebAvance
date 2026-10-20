@@ -2,12 +2,12 @@
 {
     public class UpdatePizzaPrice : UpdateEvents
     {
-        public double money { get; set; }
+        public double price { get; set; }
 
 
         public UpdatePizzaPrice(double x)
         {
-            money = x;
+            price = x;
 
 
         }

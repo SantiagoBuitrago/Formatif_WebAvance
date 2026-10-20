@@ -2,12 +2,12 @@
 {
     public class UpdateMoney : UpdateEvents
     {
-        public double money { get; set; }
+        public int money { get; set; }
 
 
-        public UpdateMoney(double x)
+        public UpdateMoney(int x)
         {
-            money = x;
+            money += x;
             
 
         }
